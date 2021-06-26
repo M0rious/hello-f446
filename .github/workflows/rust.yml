@@ -2,7 +2,7 @@ name: Rust
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, fix-dependencies ]
   pull_request:
     branches: [ main ]
 
@@ -16,6 +16,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Install target
+      run: rustup target add thumbv7em-none-eabihf
     - name: Build
       run: cargo build --verbose
     - name: Run tests
