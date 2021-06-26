@@ -2,8 +2,8 @@
 #![no_std]
 
 use cortex_m::asm::delay;
+use hal::{gpio::GpioExt, prelude::_embedded_hal_digital_v2_OutputPin};
 use stm32f4xx_hal as hal;
-use hal::{gpio::GpioExt, gpio::gpioa, prelude::_embedded_hal_digital_v2_OutputPin, timer::Timer};
 
 use hello_f446 as _; // global logger + panicking-behavior + memory layout
 
